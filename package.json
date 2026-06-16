@@ -1,0 +1,51 @@
+{
+  "name": "@ux-ui/vitest-runner",
+  "version": "0.1.0",
+  "description": "Vitest launcher with Windows drive-letter normalization for the ux-ui-pro npm portfolio (assembly.md §6/§7).",
+  "type": "module",
+  "author": "ux-ui.pro",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ux-ui-pro/vitest-runner.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ux-ui-pro/vitest-runner/issues"
+  },
+  "homepage": "https://github.com/ux-ui-pro/vitest-runner",
+  "packageManager": "npm@10.9.3",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "bin": {
+    "vitest-runner": "./bin/vitest-runner.mjs"
+  },
+  "scripts": {
+    "test:unit": "node ./bin/vitest-runner.mjs run tests",
+    "pack:check": "npm pack --dry-run && publint",
+    "verify": "npm run test:unit && npm run pack:check",
+    "prepublishOnly": "npm run verify"
+  },
+  "files": [
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "vitest": ">=4.0.0"
+  },
+  "devDependencies": {
+    "publint": "^0.3.21",
+    "vitest": "^4.1.9"
+  },
+  "keywords": [
+    "vitest",
+    "runner",
+    "windows",
+    "test",
+    "ux-ui-pro"
+  ]
+}

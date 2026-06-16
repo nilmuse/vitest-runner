@@ -1,0 +1,16 @@
+# OS generated files
+*~
+.DS_Store
+Thumbs.db
+
+# Build & Packages
+node_modules/
+dist/
+*.tgz
+
+# IDE
+.idea/
+.vscode/
+
+# Logs
+*.log

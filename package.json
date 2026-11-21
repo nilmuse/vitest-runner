@@ -1,6 +1,6 @@
 {
-  "name": "@ux-ui/vitest-runner",
-  "version": "0.1.1",
+  "name": "@nilmuse/vitest-runner",
+  "version": "0.1.2",
   "description": "Vitest launcher with Windows drive-letter normalization for the nilmuse npm portfolio (assembly.md §6/§7).",
   "type": "module",
   "author": "Maxim <m@nilmuse.com>",

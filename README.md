@@ -1,4 +1,4 @@
-# @ux-ui/vitest-runner
+# @nilmuse/vitest-runner
 
 A thin [Vitest](https://vitest.dev) launcher for the `nilmuse` npm portfolio. It works around a
 Windows-only Vitest 4 crash — `Cannot read properties of undefined (reading 'config')` — caused by
@@ -12,7 +12,7 @@ This replaces the per-repo `run-vitest.mjs` scripts: the fix lives in one publis
 ## Installation
 
 ```bash
-npm install -D @ux-ui/vitest-runner vitest
+npm install -D @nilmuse/vitest-runner vitest
 ```
 
 `vitest` is a peer dependency — the consuming package owns its version.

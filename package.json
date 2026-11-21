@@ -1,18 +1,18 @@
 {
   "name": "@ux-ui/vitest-runner",
-  "version": "0.1.0",
-  "description": "Vitest launcher with Windows drive-letter normalization for the ux-ui-pro npm portfolio (assembly.md §6/§7).",
+  "version": "0.1.1",
+  "description": "Vitest launcher with Windows drive-letter normalization for the nilmuse npm portfolio (assembly.md §6/§7).",
   "type": "module",
-  "author": "ux-ui.pro",
+  "author": "Maxim <m@nilmuse.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ux-ui-pro/vitest-runner.git"
+    "url": "git+https://github.com/nilmuse/vitest-runner.git"
   },
   "bugs": {
-    "url": "https://github.com/ux-ui-pro/vitest-runner/issues"
+    "url": "https://github.com/nilmuse/vitest-runner/issues"
   },
-  "homepage": "https://github.com/ux-ui-pro/vitest-runner",
+  "homepage": "https://github.com/nilmuse/vitest-runner",
   "packageManager": "npm@10.9.3",
   "engines": {
     "node": ">=20.19.0"
@@ -46,6 +46,6 @@
     "runner",
     "windows",
     "test",
-    "ux-ui-pro"
+    "nilmuse"
   ]
 }

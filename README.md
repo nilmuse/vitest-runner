@@ -1,6 +1,6 @@
 # @ux-ui/vitest-runner
 
-A thin [Vitest](https://vitest.dev) launcher for the `ux-ui-pro` npm portfolio. It works around a
+A thin [Vitest](https://vitest.dev) launcher for the `nilmuse` npm portfolio. It works around a
 Windows-only Vitest 4 crash — `Cannot read properties of undefined (reading 'config')` — caused by
 a drive-letter case mismatch (`d:` vs `D:`) in the ESM-resolved path (`assembly.md` §6/§7). On
 Linux/macOS (and in CI) the normalization is a no-op.

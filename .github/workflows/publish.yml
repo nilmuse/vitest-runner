@@ -1,9 +1,9 @@
-# Publish to npm via Trusted Publishing (OIDC) — STUB FOR REVIEW (assembly.md §8).
+# Publish to npm via Trusted Publishing (OIDC) вЂ” STUB FOR REVIEW (assembly.md В§8).
 #
-# Human/CI prerequisites (NOT performed by the agent, HANDOFF §4):
-#   1. Create the @ux-ui npm scope/org and grant publish rights.
+# Human/CI prerequisites (NOT performed by the agent, HANDOFF В§4):
+#   1. Ensure the npm account owns the @nilmuse scope.
 #   2. Configure a Trusted Publisher for this package on npmjs.com
-#      (package Settings → Trusted Publisher: this repository + this workflow file).
+#      (package Settings в†’ Trusted Publisher: this repository + this workflow file).
 # No long-lived NPM_TOKEN is used: with a Trusted Publisher configured, npm mints
 # short-lived OIDC credentials and attaches provenance automatically.
 name: publish

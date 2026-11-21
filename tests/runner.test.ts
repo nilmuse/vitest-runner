@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 const normalizeDrive = (value: string): string =>
   value.replace(/^[a-z]:/, (drive) => drive.toUpperCase());
 
-describe('@ux-ui/vitest-runner', () => {
+describe('@nilmuse/vitest-runner', () => {
   it('upper-cases a lower-case drive letter', () => {
     expect(normalizeDrive('d:/Projects/npm')).toBe('D:/Projects/npm');
   });

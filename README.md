@@ -1,11 +1,10 @@
 # @nilmuse/vitest-runner
 
-A thin [Vitest](https://vitest.dev) launcher for the `nilmuse` npm portfolio. It works around a
-Windows-only Vitest 4 crash — `Cannot read properties of undefined (reading 'config')` — caused by
-a drive-letter case mismatch (`d:` vs `D:`) in the ESM-resolved path (`assembly.md` §6/§7). On
-Linux/macOS (and in CI) the normalization is a no-op.
+A [Vitest](https://vitest.dev) launcher for npm scripts, with a workaround for Windows
+drive-letter casing crashes. It forwards arguments to the Vitest version installed in your project.
 
-This replaces the per-repo `run-vitest.mjs` scripts: the fix lives in one published dev-tool.
+[![npm](https://img.shields.io/npm/v/@nilmuse/vitest-runner.svg?colorB=brightgreen)](https://www.npmjs.com/package/@nilmuse/vitest-runner)
+[![NPM Downloads](https://img.shields.io/npm/dm/@nilmuse/vitest-runner.svg?style=flat)](https://www.npmjs.com/package/@nilmuse/vitest-runner)
 
 ---
 
@@ -15,13 +14,12 @@ This replaces the per-repo `run-vitest.mjs` scripts: the fix lives in one publis
 npm install -D @nilmuse/vitest-runner vitest
 ```
 
-`vitest` is a peer dependency — the consuming package owns its version.
+Requires Node.js 20.19 or later and Vitest 4 or later. Vitest is a peer dependency, so your
+project chooses its version.
 
----
+## Quick start
 
-## Usage
-
-In a package `package.json`:
+Add a script to your project's `package.json`. This example runs tests in `src`:
 
 ```json
 {
@@ -31,10 +29,26 @@ In a package `package.json`:
 }
 ```
 
-Arguments are forwarded verbatim to Vitest (`vitest-runner run src`, `vitest-runner run tests`,
-`vitest-runner --coverage`, …). With no arguments it defaults to `run` (single, non-watch run).
+Run it with:
 
----
+```bash
+npm run test:unit
+```
+
+## CLI behavior
+
+Arguments are passed unchanged to Vitest. For example, use `vitest-runner run tests` to run
+tests from `tests`, or `vitest-runner --coverage` to pass the coverage flag.
+
+With no arguments, the launcher passes `run`, which performs a single test run without
+watching. Output is inherited from Vitest. The launcher returns Vitest's exit status, or `1`
+if no status is available.
+
+On Windows, it uppercases the drive letter in the resolved Vitest path and working directory.
+This works around a Vitest 4 crash caused by a mismatch such as `d:` vs `D:`:
+`Cannot read properties of undefined (reading 'config')`.
+POSIX paths on Linux and macOS are unchanged. You can replace a per-project `run-vitest.mjs`
+workaround with this launcher.
 
 ## License
 
